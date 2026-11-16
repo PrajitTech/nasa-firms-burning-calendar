@@ -201,6 +201,7 @@ map_path = (
     if os.path.exists("harmonized_h3_map.csv.gz")
     else "harmonized_h3_map.csv"
 )
+map_df = load_csv_optional(map_path)
 val_df = load_csv_optional("calibration_validation.csv", parse_dates=["acq_date"])
 
 # --- Sidebar Controls ---
