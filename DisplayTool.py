@@ -196,7 +196,11 @@ st.markdown(
 
 
 df = load_calendar_data("harmonized_western_us_production.csv")
-map_df = load_csv_optional("harmonized_h3_map.csv")
+map_path = (
+    "harmonized_h3_map.csv.gz"
+    if os.path.exists("harmonized_h3_map.csv.gz")
+    else "harmonized_h3_map.csv"
+)
 val_df = load_csv_optional("calibration_validation.csv", parse_dates=["acq_date"])
 
 # --- Sidebar Controls ---
