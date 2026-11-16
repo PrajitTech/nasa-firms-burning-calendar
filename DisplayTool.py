@@ -509,6 +509,8 @@ with tab1:
       start_date if start_date == end_date else f"{start_date} to {end_date}"
   )
 
+  day_cells = pd.DataFrame()
+
   if not map_df.empty:
     map_dates = map_df["acq_date"].astype(str).str.slice(0, 10)
     span_cells = map_df[(map_dates >= start_date) & (map_dates <= end_date)]
